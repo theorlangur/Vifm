@@ -159,9 +159,9 @@ command! cp :yank | winrun , put
 "move with conflict dialog
 command! mv :yank | winrun , put!
 "eject current usb drive
-command! ejectcurrent ejectusb.py %d
+command! ejectcurrent ejectusb.py %d %m
 "eject some usb drive
-command! eject ejectusb.py %a
+command! eject ejectusb.py %a %m
 
 " ------------------------------------------------------------------------------
 " File types association
