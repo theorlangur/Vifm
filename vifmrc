@@ -140,6 +140,10 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
+"copy with conflict dialog
+command! cp :yank | winrun , put
+"move with conflict dialog
+command! mv :yank | winrun , put!
 
 
 " ------------------------------------------------------------------------------

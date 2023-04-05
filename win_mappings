@@ -1,3 +1,10 @@
+filextype *
+	\ {Default open}
+	\ start "" %"f &,
+fileviewer *.exe,*.dll dumpbin.exe /DEPENDENTS %"f 
+
+", dumpbin.exe /ALL /RAWDATA:NONE %"f
+
 "Custom commands
 "windows version for finding files
 command! Find :execute 'goto' fnameescape(term('fzf | sed.exe -b -e "s/\\/\//g"'))
@@ -11,6 +18,12 @@ command! GitResolve TortoiseGitProc /command:resolve /path:%f &
 command! ejectcurrent ejectusb.py %d %m
 "eject some usb drive
 command! eject ejectusb.py %a %m
+"unpack command for windows using powershell's Expand-Archive
+command! unpack mkdir %c:r && powershell Expand-Archive -Path %c -DestinationPath %c:r
+"pack command for windows using powershell's Compress-Archive
+command! pack powershell Compress-Archive -Path %c -DestinationPath %c:r.zip 
+"packother command for windows using powershell's Compress-Archive
+command! packother powershell Compress-Archive -Path %D\* -DestinationPath %D:t.zip
 
 "Custom mappings
 "eject 
@@ -27,6 +40,8 @@ nnoremap <space>gl :GitLog<cr>
 nnoremap <space>gb :GitBlame<cr>
 "git resolve
 nnoremap <space>gr :GitResolve<cr>
+"nvim edit
+nnoremap i :edit<cr>
 
 "Custom common window marks
 mark h ~/
