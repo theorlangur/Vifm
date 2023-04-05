@@ -111,12 +111,6 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
-mark h ~/
-mark D ~/Downloads
-mark d d:/Developing
-mark g d:/Developing/grandma_main/gma3
-mark s c:/ProgramData/MALightingTechnology/gma3_beta/shared/shows
-mark l c:/ProgramData/MALightingTechnology/gma3_library
 
 " ------------------------------------------------------------------------------
 " Commands
@@ -146,22 +140,7 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
-"windows version for finding files
-command! Find :execute 'goto' fnameescape(term('fzf | sed.exe -b -e "s/\\/\//g"'))
-"tortoise git log for file
-command! GitLog TortoiseGitProc /command:log /path:%f &
-"tortoise git blame for file
-command! GitBlame TortoiseGitProc /command:blame /path:%f &
-"tortoise git resolve for file
-command! GitResolve TortoiseGitProc /command:resolve /path:%f &
-"copy with conflict dialog
-command! cp :yank | winrun , put
-"move with conflict dialog
-command! mv :yank | winrun , put!
-"eject current usb drive
-command! ejectcurrent ejectusb.py %d %m
-"eject some usb drive
-command! eject ejectusb.py %a %m
+
 
 " ------------------------------------------------------------------------------
 " File types association
@@ -528,8 +507,6 @@ nnoremap <a-o> :sync %c<cr>
 " Swap panes
 nnoremap <c-u> <c-w>x
 
-"trigger file search with fzf
-nnoremap go :Find<cr>
 "move selected to other panel
 nnoremap gm :mv<cr>
 "move selected to other panel
@@ -538,8 +515,6 @@ vnoremap gm :mv<cr>
 nnoremap gc :cp<cr>
 "copy selected to other panel
 vnoremap gc :cp<cr>
-"select volume
-nnoremap <space>v :volume<cr>
 "close other tabs
 nnoremap <space>co :tabonly<cr>
 "close this tab
@@ -550,20 +525,10 @@ nnoremap gtn :tabnext<cr>
 nnoremap gtp :tabprev<cr>
 "create new tab
 nnoremap <space>t :tabnew<cr>
-"git log
-nnoremap <space>gl :GitLog<cr>
-"git blame
-nnoremap <space>gb :GitBlame<cr>
-"git resolve
-nnoremap <space>gr :GitResolve<cr>
 "mkdir 
 nnoremap <space>d :mkdir<space>
 "shell 
 nnoremap <space>s :shell<cr>
-"eject 
-nnoremap <space>e :ejectcurrent<cr>
-"eject but provide disk letter
-nnoremap <space>E :eject<space>
 
 " ------------------------------------------------------------------------------
 " Various customization examples
@@ -595,3 +560,10 @@ nnoremap <space>E :eject<space>
 " ------------------------------------------------------------------------------
 
 " https://github.com/cirala/vifm_devicons
+
+if has('win')
+    source win_mappings
+    if filetype('local_win_mappings') == 'reg'
+        source local_win_mappings
+    endif
+endif
