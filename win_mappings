@@ -41,6 +41,10 @@ command! GitPullFF git pull --ff-only %m
 command! GitPullRebase git pull --rebase %m
 "git status
 command! GitStatus git status %m
+"git push
+command! GitPush git push %m
+"git push force
+command! GitForce git push --force %m
 
 "Custom mappings
 "eject 
@@ -73,6 +77,8 @@ nnoremap <space>gpff :GitPullFF<cr>
 nnoremap <space>gpr :GitPullRebase<cr>
 "git status
 nnoremap <space>gs :GitStatus<cr>
+"git push
+nnoremap <space>gp :GitPush<cr>
 
 "nvim edit
 nnoremap i :edit<cr>
