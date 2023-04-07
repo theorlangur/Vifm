@@ -45,6 +45,16 @@ command! GitStatus git status %m
 command! GitPush git push %m
 "git push force
 command! GitForce git push --force %m
+"git fetch
+command! GitFetch git fetch %m
+"git stash, fetch and rebase
+command! GitStashFetchRebaseMaster git stash save && git fetch && git rebase origin/master && git stash pop && git status %m
+"git stash
+command! GitStash git stash save %"a %m
+"git pop
+command! GitPop git pop %m
+"git stash list
+command! GitStashList git stash list %m
 
 "Custom mappings
 "eject 
@@ -79,6 +89,16 @@ nnoremap <space>gpr :GitPullRebase<cr>
 nnoremap <space>gs :GitStatus<cr>
 "git push
 nnoremap <space>gp :GitPush<cr>
+"git stash
+nnoremap <space>gS :GitStash<cr>
+"git stash with message
+nnoremap <space>gSm :GitStash<space>
+"git stash list
+nnoremap <space>gSl :GitStashList<cr>
+"git pop
+nnoremap <space>gP :GitPop<cr>
+"git fetch-rebase
+nnoremap <space>gfnr :GitStashFetchRebaseMaster<cr>
 
 "nvim edit
 nnoremap i :edit<cr>
