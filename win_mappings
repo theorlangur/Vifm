@@ -3,17 +3,20 @@ filextype *
 	\ start "" %"f &,
 fileviewer *.exe,*.dll dumpbin.exe /DEPENDENTS %"f 
 
-", dumpbin.exe /ALL /RAWDATA:NONE %"f
 
 "Custom commands
 "windows version for finding files
 command! Find :execute 'goto' fnameescape(term('fzf | sed.exe -b -e "s/\\/\//g"'))
 "tortoise git log for file
 command! GitLog TortoiseGitProc /command:log /path:%f &
+"tortoise git log for current directory
+command! GitLogDir TortoiseGitProc /command:log /path:%d &
 "tortoise git blame for file
 command! GitBlame TortoiseGitProc /command:blame /path:%f &
 "tortoise git resolve for file
 command! GitResolve TortoiseGitProc /command:resolve /path:%f &
+"tortoise git commit dir
+command! GitCommit TortoiseGitProc /command:commit /path:%d &
 "eject current usb drive
 command! ejectcurrent ejectusb.py %d %m
 "eject some usb drive
@@ -24,6 +27,20 @@ command! unpack mkdir %c:r && powershell Expand-Archive -Path %c -DestinationPat
 command! pack powershell Compress-Archive -Path %c -DestinationPath %c:r.zip 
 "packother command for windows using powershell's Compress-Archive
 command! packother powershell Compress-Archive -Path %D\* -DestinationPath %D:t.zip
+
+"Git branch manipultaion commands
+"checkout DimaExp
+command! GitCheckDimaExp git checkout DimaExp %m
+"checkout master
+command! GitCheckMaster git checkout master %m
+"checkout custom branch
+command! GitCheckout git checkout %a %m
+"pull current branch --ff-only
+command! GitPullFF git pull --ff-only %m
+"pull current branch --rebase
+command! GitPullRebase git pull --rebase %m
+"git status
+command! GitStatus git status %m
 
 "Custom mappings
 "eject 
@@ -36,10 +53,27 @@ nnoremap <space>v :volume<cr>
 nnoremap go :Find<cr>
 "git log
 nnoremap <space>gl :GitLog<cr>
+"git log dir
+nnoremap <space>gL :GitLogDir<cr>
 "git blame
 nnoremap <space>gb :GitBlame<cr>
 "git resolve
 nnoremap <space>gr :GitResolve<cr>
+"git commit
+nnoremap <space>gc :GitCommit<cr>
+"git checkout DimaExp
+nnoremap <space>gcod :GitCheckDimaExp<cr>
+"git checkout master
+nnoremap <space>gcom :GitCheckMaster<cr>
+"git checkout branch
+nnoremap <space>gcob :GitCheckout<space>
+"git pull fast-forward
+nnoremap <space>gpff :GitPullFF<cr>
+"git pull rebase
+nnoremap <space>gpr :GitPullRebase<cr>
+"git status
+nnoremap <space>gs :GitStatus<cr>
+
 "nvim edit
 nnoremap i :edit<cr>
 

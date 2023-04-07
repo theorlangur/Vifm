@@ -103,7 +103,8 @@ if !has('win')
 endif
 
 " Set custom status line look
-set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+"set statusline="  Branch: %{system('git branch --show-current')}%= %A %10u:%-7g %15s %20d  "
+set statusline="  %= %A %10u:%-7g %15s %20d  "
 
 " ------------------------------------------------------------------------------
 " Bookmarks
