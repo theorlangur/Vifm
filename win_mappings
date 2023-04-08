@@ -33,6 +33,8 @@ command! packother powershell Compress-Archive -Path %D\* -DestinationPath %D:t.
 command! GitCheckDimaExp git checkout DimaExp %m
 "checkout master
 command! GitCheckMaster git checkout master %m
+"checkout release
+command! GitCheckRelease git checkout gma3_v1.9 %m
 "checkout custom branch
 command! GitCheckout git checkout %a %m
 "pull current branch --ff-only
@@ -79,6 +81,8 @@ nnoremap <space>gc :GitCommit<cr>
 nnoremap <space>gcod :GitCheckDimaExp<cr>
 "git checkout master
 nnoremap <space>gcom :GitCheckMaster<cr>
+"git checkout release
+nnoremap <space>gcor :GitCheckRelease<cr>
 "git checkout branch
 nnoremap <space>gcob :GitCheckout<space>
 "git pull fast-forward
