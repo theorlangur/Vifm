@@ -570,7 +570,4 @@ nnoremap <space>s :shell<cr>
 
 if has('win')
     source win_mappings
-    if filetype('local_win_mappings') == 'reg'
-        source local_win_mappings
-    endif
 endif

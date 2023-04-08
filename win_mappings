@@ -112,3 +112,6 @@ mark h ~/
 mark D ~/Downloads
 mark s c:/ProgramData/MALightingTechnology/gma3_beta/shared/shows
 mark l c:/ProgramData/MALightingTechnology/gma3_library
+
+"this will provide local marks and mappings
+source local_win_mappings
