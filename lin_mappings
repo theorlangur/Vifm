@@ -9,10 +9,16 @@ command! FZFfind : set noquickview
                 \|     execute 'goto' fnameescape($FZF_PICK)
                 \| endif
 
+command! unpack tar -xf %c
+"Pack command for windows using powershell's Compress-Archive
+command! pack tar -zcf %c.tar.gz %c 
+
 "trigger file search with fzf
 nnoremap go :FZFfind<cr>
 "nvim edit
 nnoremap i :edit<cr>
+
+nnoremap <space>h :hideui<cr>
 
 "Custom common linux marks
 
