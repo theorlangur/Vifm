@@ -572,4 +572,6 @@ nnoremap <space>s :shell<cr>
 
 if has('win')
     source win_mappings
+else
+    source lin_mappings
 endif
