@@ -441,6 +441,9 @@ endif
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
 
+nnoremap <space>h :hideui<cr>
+
+
 " Interaction with system clipboard
 if has('win')
     " Yank current directory path to Windows clipboard with forward slashes

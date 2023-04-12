@@ -18,8 +18,6 @@ nnoremap go :FZFfind<cr>
 "nvim edit
 nnoremap i :edit<cr>
 
-nnoremap <space>h :hideui<cr>
-
 "Custom common linux marks
 
 mark h ~/
