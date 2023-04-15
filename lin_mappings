@@ -1,0 +1,27 @@
+filextype *
+	\ {Default open}
+	\ xdg-open %f &,
+
+"FZF config
+command! FZFfind : set noquickview
+                \| let $FZF_PICK = term('find | fzf --height 10 2>/dev/tty')
+                \| if $FZF_PICK != ''
+                \|     execute 'goto' fnameescape($FZF_PICK)
+                \| endif
+
+command! unpack tar -xf %c
+"Pack command for windows using powershell's Compress-Archive
+command! pack tar -zcf %c.tar.gz %c 
+
+"trigger file search with fzf
+nnoremap go :FZFfind<cr>
+"nvim edit
+nnoremap i :edit<cr>
+
+"Custom common linux marks
+
+mark h ~/
+mark d ~/Documents
+mark D ~/Downloads
+mark a ~/myapps
+mark c ~/myapps/cpp
