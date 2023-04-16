@@ -149,6 +149,7 @@ command! reload :write | restart full
 command! cp :yank | winrun , put
 "move with conflict dialog
 command! mv :yank | winrun , put!
+command! lg lazygit
 
 
 " ------------------------------------------------------------------------------
