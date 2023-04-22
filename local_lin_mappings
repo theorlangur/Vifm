@@ -1,0 +1,3 @@
+"rclone mount/unmount gdrive
+command! MountG rclone mount gdrive: ~/gdrive &
+command! UnmountG killall rclone

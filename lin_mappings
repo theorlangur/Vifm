@@ -25,3 +25,6 @@ mark d ~/Documents
 mark D ~/Downloads
 mark a ~/myapps
 mark c ~/myapps/cpp
+
+"this will provide local marks and mappings
+source $VIFM/local_lin_mappings
