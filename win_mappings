@@ -7,6 +7,8 @@ fileviewer *.exe,*.dll dumpbin.exe /DEPENDENTS %"f
 "Custom commands
 "windows version for finding files
 command! Find :execute 'goto' fnameescape(term('fzf | sed.exe -b -e "s/\\/\//g"'))
+"windows version for finding folders
+command! FindDir :execute 'cd' fnameescape(term('dir /S /A:-H /A:D | awk "/[a-zA-Z]:\\/{$1=\"\"; $2=\"\"; sub(/^[ ]+/,\"\"); print}" | fzf | sed -b -e "s/\\/\//g"'))
 "tortoise git log for file
 command! GitLog TortoiseGitProc /command:log /path:%f &
 "tortoise git log for current directory
@@ -67,6 +69,8 @@ nnoremap <space>E :eject<space>
 nnoremap <space>v :volume<cr>
 "trigger file search with fzf
 nnoremap go :Find<cr>
+"trigger file search with fzf
+nnoremap gd :FindDir<cr>
 "git log
 nnoremap <space>gl :GitLog<cr>
 "git log dir
