@@ -149,7 +149,6 @@ command! reload :write | restart full
 command! cp :yank | winrun , put
 "move with conflict dialog
 command! mv :yank | winrun , put!
-command! g gitui
 
 
 " ------------------------------------------------------------------------------
@@ -449,6 +448,9 @@ nnoremap ,N :!nvim %c<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
+
+" run gitui for current directory
+nnoremap ,g :!gitui<cr>
 
 " Example of standard two-panel file managers mappings
 nnoremap <f3> :!less %f<cr>
