@@ -38,11 +38,14 @@ command! FZFfind : set noquickview
 command! unpack tar -xf %c
 "Pack command for windows using powershell's Compress-Archive
 command! pack tar -zcf %c.tar.gz %c 
+command! vsc code .&
 
 "trigger file search with fzf
 nnoremap go :FZFfind<cr>
 "nvim edit
 nnoremap i :edit<cr>
+"launch vscode
+nnoremap <space>c :vsc<cr>
 
 "Custom common linux marks
 
