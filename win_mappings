@@ -118,10 +118,10 @@ nnoremap yp :!echo %"d:gs!\!/!%i| clip<cr>
 nnoremap yP :!echo %"d%i| clip<cr>
 
 " yank path to current file to Windows clipboard with forward slashes
-nnoremap yf :!echo %"c:gs!\!/!%i| clip<cr>
+nnoremap yf :!echo %"c:pgs!\!/!%i| clip<cr>
 
 " yank path to current directory to Windows clipboard with backward slashes
-nnoremap yF :!echo %"c%i| clip<cr>
+nnoremap yF :!echo %"c:p%i| clip<cr>
 
 " yank current filename without path to Windows clipboard
 nnoremap yn :!echo %"c%i| clip<cr>
