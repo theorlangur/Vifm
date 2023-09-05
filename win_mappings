@@ -111,23 +111,17 @@ nnoremap <space>gfnr :GitStashFetchRebaseMaster<cr>
 "nvim edit
 nnoremap i :edit<cr>
 
-" yank current directory path to Windows clipboard with forward slashes
-nnoremap yp :!echo %"d:gs!\!/!%i| clip<cr>
-
 " yank current directory path to Windows clipboard with backward slashes
-nnoremap yP :!echo %"d%i| clip<cr>
-
-" yank path to current file to Windows clipboard with forward slashes
-nnoremap yf :!echo %"c:pgs!\!/!%i| clip<cr>
+nnoremap yp :!echo %d%i| clip<cr>
 
 " yank path to current directory to Windows clipboard with backward slashes
-nnoremap yF :!echo %"c:p%i| clip<cr>
+nnoremap yf :!echo %c:p%i| clip<cr>
 
 " yank current filename without path to Windows clipboard
-nnoremap yn :!echo %"c%i| clip<cr>
+nnoremap yn :!echo %c%i| clip<cr>
 
 " yank root of current file's name to Windows clipboard
-nnoremap yr :!echo %"c:r%i| clip<cr>
+nnoremap yr :!echo %c:r%i| clip<cr>
 
 nnoremap ,d :!wmic logicaldisk get size, freespace, caption | awk.exe "{for (i = 1; i <= NF; i++) if ($i~/^[0-9]+$/) { $i = ($i/(1000*1000*1000)) \" GB\"; } print }" %q<cr>
 
