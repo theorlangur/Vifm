@@ -443,8 +443,8 @@ endif
 nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
 
 " Open nvim in the current directory
-nnoremap ,n :!nvim<cr>
-nnoremap ,N :!nvim %c<cr>
+nnoremap ,, :!nvim<cr>
+nnoremap ,n :!nvim %c<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
