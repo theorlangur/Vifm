@@ -410,7 +410,7 @@ fileviewer *.lua,*.xml,*.json,*.py,*.pl,*.yml highlight -O xterm256 -s zenburn %
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
 " set viewcolumns=-{name}..,6{}.
-set viewcolumns=-{name}..,{mtime},8{}.
+set viewcolumns=-{name}..,{mtime},6{size}
 
 " Show vertical border
 " set fillchars=vborder:ƒ..
