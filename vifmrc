@@ -467,6 +467,10 @@ nnoremap <a-i> :sync<cr>
 nnoremap <a-o> :sync %c<cr>
 " Swap panes
 nnoremap <c-u> <c-w>x
+" Open current directory in the other pane
+nnoremap gs :sync<cr>
+" Open directory under cursor in the other pane
+nnoremap gS :sync %c<cr>
 
 "move selected to other panel
 nnoremap gm :mv<cr>
