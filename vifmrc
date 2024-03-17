@@ -480,16 +480,22 @@ vnoremap gm :mv<cr>
 nnoremap gc :cp<cr>
 "copy selected to other panel
 vnoremap gc :cp<cr>
+"======Tab management==================
+"append new tab
+nnoremap <space>pa :tabnew<cr>
 "close other tabs
-nnoremap <space>co :tabonly<cr>
+nnoremap <space>po :tabonly<cr>
 "close this tab
-nnoremap <space>ct :tabclose<cr>
-"goto next tab
-nnoremap gtn :tabnext<cr>
-"goto prev tab
-nnoremap gtp :tabprev<cr>
-"create new tab
-nnoremap <space>t :tabnew<cr>
+nnoremap <space>pc :tabclose<cr>
+"goto tab 1
+nnoremap <space>p1 1gt
+"goto tab 2
+nnoremap <space>p2 2gt
+"goto tab 3
+nnoremap <space>p3 3gt
+"goto tab 4
+nnoremap <space>p4 4gt
+"======End of Tab management===========
 "mkdir 
 nnoremap <space>d :mkdir<space>
 "shell 
