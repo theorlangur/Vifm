@@ -517,6 +517,9 @@ nnoremap gb :file &<cr>l
 
 nnoremap <space>h :hideui<cr>
 
+"toggle visibility of dot files
+nnoremap g. za
+
 
 " ------------------------------------------------------------------------------
 " Various customization examples
