@@ -520,6 +520,8 @@ nnoremap <space>h :hideui<cr>
 "toggle visibility of dot files
 nnoremap g. za
 
+nnoremap <space>qq :q<cr>
+
 
 " ------------------------------------------------------------------------------
 " Various customization examples
