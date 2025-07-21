@@ -435,7 +435,7 @@ nnoremap A cw
 " Open console in current directory
 if $DISPLAY && executable('xterm')
     nnoremap ,t :!xterm &<cr>
-elseif $TERMINAL
+elseif $TERMINAL != ''
     nnoremap ,t :!$TERMINAL &<cr>
 endif
 
@@ -468,9 +468,9 @@ nnoremap <a-o> :sync %c<cr>
 " Swap panes
 nnoremap <c-u> <c-w>x
 " Open current directory in the other pane
-nnoremap gs :sync<cr>
+nnoremap gd :sync<cr>
 " Open directory under cursor in the other pane
-nnoremap gS :sync %c<cr>
+nnoremap gD :sync %c<cr>
 
 "move selected to other panel
 nnoremap gm :mv<cr>

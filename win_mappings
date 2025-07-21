@@ -3,6 +3,8 @@ filextype *
 	\ start "" %"f &,
 fileviewer *.exe,*.dll dumpbin.exe /DEPENDENTS %"f 
 
+set findprg="where /R %s %A"
+nmap ,f :find<space>
 
 "Custom commands
 "windows version for finding files
@@ -130,7 +132,7 @@ nnoremap ,d :!wmic logicaldisk get size, freespace, caption | awk.exe "{for (i =
 "Custom common window marks
 mark h ~/
 mark D ~/Downloads
-mark s c:/ProgramData/MALightingTechnology/gma3_beta/shared/shows
+mark s c:/ProgramData/MALightingTechnology/gma3_alpha/shared/shows
 mark l c:/ProgramData/MALightingTechnology/gma3_library
 
 "this will provide local marks and mappings
