@@ -3,10 +3,13 @@ if $WAYLAND_DISPLAY
     if executable('wl-copy')
         " Yank current directory path into primary and selection clipboards
         nnoremap yp :!echo -n %d | wl-copy %i &&
-                    \ echo -n %d | wl-copy -p %i<cr>
+                    \ echo -n %d | wl-copy -p %i<cr>:echo expand('%"d') "is yanked to clipboard"<cr>
         " Yank current file path into into primary and selection clipboards
         nnoremap yf :!echo -n %c:p | wl-copy %i &&
-                    \ echo -n %c:p | wl-copy -p %i<cr>
+                    \ echo -n %c:p | wl-copy -p %i<cr>:echo expand('%"c:p') "is yanked to clipboard"<cr>
+        " yank current filename without path into the clipboard
+        nnoremap yn :!echo -n %c | wl-copy %i &&
+                    \ echo -n %c | wl-copy -p %i<cr>:echo expand('%"c') "is yanked to clipboard"<cr>
     endif
 elseif $DISPLAY
     if executable('xclip')
@@ -46,6 +49,7 @@ nnoremap go :FZFfind<cr>
 nnoremap i :edit<cr>
 "launch vscode
 nnoremap <space>c :vsc<cr>
+nnoremap ,f :find<space>
 
 "Custom common linux marks
 
