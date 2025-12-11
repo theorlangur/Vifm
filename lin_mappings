@@ -42,6 +42,8 @@ command! unpack tar -xf %c
 "Pack command for windows using powershell's Compress-Archive
 command! pack tar -zcf %c.tar.gz %c 
 command! vsc code .&
+command! uz unzip %c -d %c:r
+command! ut tar -xzf %c -C %c:r
 
 "trigger file search with fzf
 nnoremap go :FZFfind<cr>
