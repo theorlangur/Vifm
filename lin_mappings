@@ -43,7 +43,7 @@ command! unpack tar -xf %c
 command! pack tar -zcf %c.tar.gz %c 
 command! vsc code .&
 command! uz unzip %c -d %c:r
-command! ut tar -xzf %c -C %c:r
+command! ut tar -xzf %c --one-top-level
 
 "trigger file search with fzf
 nnoremap go :FZFfind<cr>
@@ -52,6 +52,8 @@ nnoremap i :edit<cr>
 "launch vscode
 nnoremap <space>c :vsc<cr>
 nnoremap ,f :find<space>
+nnoremap ,R :!sudo vifm %d %D<cr>
+nnoremap S :!EDITOR=/opt/nvim-linux-x86_64/bin/nvim sudo -e %f<cr>
 
 "Custom common linux marks
 
