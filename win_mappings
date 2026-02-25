@@ -72,7 +72,7 @@ nnoremap <space>v :volume<cr>
 "trigger file search with fzf
 nnoremap go :Find<cr>
 "trigger file search with fzf
-nnoremap gd :FindDir<cr>
+"nnoremap gd :FindDir<cr>
 "git log
 nnoremap <space>gl :GitLog<cr>
 "git log dir
